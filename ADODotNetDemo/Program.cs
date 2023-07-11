@@ -7,7 +7,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform the Operation\n1.Create DataBase\n2.Create Table\n3.Insert Data\n4.Exit");
+                Console.WriteLine("Choose Option to Perform the Operation\n1.Create DataBase\n2.Create Table\n3.Insert Data\n4.Update\n5.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch(option)
                 {
@@ -21,6 +21,9 @@
                         CustomerOperations.InsertData();
                         break;
                         case 4:
+                        CustomerOperations.UpdateData();
+                        break;
+                        case 5:
                         flag = false;
                         break;
                 }

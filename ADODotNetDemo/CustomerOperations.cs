@@ -83,5 +83,28 @@ namespace ADODotNetDemo
                 sql.Close();
             }
         }
+        public static void UpdateData()
+        {
+            try
+            {
+                string query = "Update CustomerData set PhoneNumber=565345 where Id=6";
+                SqlCommand command = new SqlCommand(query, sql);
+                //Opening Connection
+                sql.Open();
+                //Executing the Sql query
+                command.ExecuteNonQuery();
+                //Display a message
+                Console.WriteLine("Updated PhoneNumber Successfully");
+                Console.WriteLine("--------------------------------");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Smething Went Wrong" + ex);
+            }
+            finally
+            {
+                sql.Close();
+            }
+        }
     }
 }
