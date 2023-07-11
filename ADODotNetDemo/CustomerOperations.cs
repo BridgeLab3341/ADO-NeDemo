@@ -27,7 +27,7 @@ namespace ADODotNetDemo
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Smething Went Wrong"+ex);
+                Console.WriteLine("Smething Went Wrong" + ex);
             }
             finally
             {
@@ -49,6 +49,30 @@ namespace ADODotNetDemo
                 //Display a message
                 Console.WriteLine("Table Created Successfully");
                 Console.WriteLine("---------------------------");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Smething Went Wrong" + ex);
+            }
+            finally
+            {
+                sql.Close();
+            }
+        }
+        public static void InsertData()
+        {
+            try
+            {
+                //writing sql query
+                string query = "Insert into CustomerData values('Somu','Banglore'),('Anil','Banglore'),('Kumar','Kolar')";
+                SqlCommand command = new SqlCommand(query, sql);
+                //Opening Connection
+                sql.Open();
+                //Executing the Sql query
+                command.ExecuteNonQuery();
+                //Display a message
+                Console.WriteLine("Data Inserted Successfully");
+                Console.WriteLine("--------------------------");
             }
             catch (Exception ex)
             {
