@@ -106,5 +106,28 @@ namespace ADODotNetDemo
                 sql.Close();
             }
         }
+        public static void Delete()
+        {
+            try
+            {
+                string query = "Delete from CustomerData where Id=5";
+                SqlCommand command = new SqlCommand(query, sql);
+                //Opening Connection
+                sql.Open();
+                //Executing the Sql query
+                command.ExecuteNonQuery();
+                //Display a message
+                Console.WriteLine("Deleted Data Successfully");
+                Console.WriteLine("-------------------------");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Smething Went Wrong" + ex);
+            }
+            finally
+            {
+                sql.Close();
+            }
+        }
     }
 }
